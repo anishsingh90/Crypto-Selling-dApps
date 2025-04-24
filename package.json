@@ -9,12 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/font": "13.4.16",
+    "@next/font": "^13.4.16",
     "ethers": "^5.7.2",
-    "next": "13.4.16",
-    "react": "18.2.0",
+    "next": "^15.3.1",
+    "react": "^18.2.0",
     "react-countdown": "^2.3.5",
-    "react-dom": "18.2.0",
+    "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
     "web3modal": "^1.9.9"
   },
