@@ -8,6 +8,7 @@ import {
   getBalance,
   connectingTOKEN_SALE_CONTRACT,
 } from "../Utils/index";
+import { TOKEN_SALE_ADDRESS } from "./constants";
 
 const StateContext = createContext();
 
@@ -100,6 +101,8 @@ export const StateContextProvider = ({ children }) => {
         tokenSaleBalance: ethers.utils.formatEther(tokenSaleBalance.toString()),
       };
       setTokenSale(tokenSale);
+      console.log(currentHolder);
+      console.log(nativeToken);
     } catch (error) {
       console.log(error);
     }
@@ -108,6 +111,46 @@ export const StateContextProvider = ({ children }) => {
   useEffect(() => {
     fetchInitialData();
   }, []);
+
+  //BUY TOKEN
+  const buyToken = async (nToken) => {
+    try {
+      const amount = ethers.utils.parseUnits(nToken.toString(), "ether");
+      const contract = await connectingTOKEN_SALE_CONTRACT();
+
+      const buying = await contract.buyTokens(nToken, {
+        value: amount.toString(),
+      });
+
+      await buying.wait();
+      console.log(buying);
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  //NATIVE TOKEN TRANSFER
+  const transferNativeToken = async () => {
+    try {
+      const TOKEN_SALE_ADDRESS = "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9";
+      const TOKEN_AMOUNT = 500;
+      const tokens = TOKEN_AMOUNT.toString();
+      const transferAmount = ethers.utils.parseEther(tokens);
+
+      const contract = await connectingTOKENCONTRACT();
+      const transaction = await contract.transfer(
+        TOKEN_SALE_ADDRESS,
+        transferAmount
+      );
+
+      console.log(contract);
+      await transaction.wait();
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <StateContext.Provider value={{ TOKEN_ICO }}>
