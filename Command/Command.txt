@@ -1,2 +1,2 @@
-//npx harhat node
-//npx harhat run --network localhost scripts/deploy.js
+//npx hardhat node
+//npx hardhat run --network localhost scripts/deploy.js

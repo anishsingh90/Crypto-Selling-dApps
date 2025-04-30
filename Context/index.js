@@ -17,7 +17,7 @@ export const StateContextProvider = ({ children }) => {
 
   // STATE VARIABLES
   const [address, setAddress] = useState("");
-  const [first, setBalance] = useState("");
+  const [balance, setBalance] = useState("");
   const [nativeToken, setNativeToken] = useState("");
   const [tokenHolders, setTokenHolders] = useState("");
   const [tokenSale, setTokenSale] = useState("");
@@ -27,7 +27,7 @@ export const StateContextProvider = ({ children }) => {
   const fetchInitialData = async () => {
     try {
       //GET USER ACCOUNT
-      const accont = await CheckIfWalletConnected();
+      const account = await CheckIfWalletConnected();
       //GET USE BALANCE
       const balance = await getBalance();
       setBalance(ethers.utils.formatEther(balance.toString()));
@@ -153,7 +153,21 @@ export const StateContextProvider = ({ children }) => {
   };
 
   return (
-    <StateContext.Provider value={{ TOKEN_ICO }}>
+    <StateContext.Provider
+      value={{
+        transferNativeToken,
+        buyToken,
+        connectWallet,
+        setAddress,
+        TOKEN_ICO,
+        currentHolder,
+        tokenSale,
+        tokenHolders,
+        nativeToken,
+        balance,
+        address,
+      }}
+    >
       {children}
     </StateContext.Provider>
   );
