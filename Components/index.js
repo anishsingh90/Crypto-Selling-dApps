@@ -14,3 +14,22 @@ import Service from "./Service";
 import Team from "./Team";
 import TimeLine from "./TimeLine";
 import TokenSale from "./TokenSale";
+
+export {
+  About,
+  ArrowUp,
+  Banner,
+  Blog,
+  Client,
+  Contact,
+  Distribution,
+  Faq,
+  Footer,
+  Header,
+  Loader,
+  MobileApp,
+  Service,
+  Team,
+  TimeLine,
+  TokenSale,
+};
