@@ -1,7 +1,7 @@
 <<<<<<< HEAD
 # Building and Deploying a Token Sale Dapp Project DApp
  
-Token Sale Dapp Project for Beginner To Advance Blockchain Developer | Launch Your Own ICO Dapp
+Token Sale Dapp Project for Beginner To Advance Blockchain Developer | Launch Your Own ICO Dapp 
 
 Unlock the potential of blockchain technology and embark on a journey to launch your own Initial Coin Offering (ICO) DApp with our comprehensive guide. Tailored for beginner to advanced blockchain developers, this project equips you with the knowledge and tools necessary to create a secure and successful token sale platform from start to finish.
 
